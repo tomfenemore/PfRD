@@ -1,0 +1,65 @@
+import numpy as np
+import pandas as pd
+from matplotlib import pyplot
+from scipy.interpolate import UnivariateSpline
+
+class geometry():
+    '''This class defines the geometry of interests and calculates the twist of a
+    section dependant on the web thickness, buckle position and extent of buckle
+    input at class initiation'''
+    def __init__(self, buckle_psn, buckle_thk, buckle_ext):
+        self.x=list(range(0,100))
+        self.buckle_psn=buckle_psn # position of buckle on span
+        self.buckle_thk=buckle_thk # buckle web thickness
+        self.buckle_ext=buckle_ext # extent of buckle to be input into mod change func
+        self.buckle_G_ini=6.3792e+3 # shear modulus of buckle
+        self.web_G=1.7829e+4 # shear modulus of other walls
+        self.web_t=1.25 # web thickness
+        self.flange_G = 1.2033e+4  # flange shear modulus
+        self.flange_t = 2.5  # flange thickness
+        self.shear_mod_change()
+        self.buckle_G=self.shear_mod_change()*self.buckle_G_ini
+        self.shear_ctr_org()
+        self.shear_ctr_chg()
+        self.buckle_e=self.shear_ctr_org()-self.shear_ctr_chg()
+
+
+
+    def shear_mod_change(self):
+        '''Function to define the change in shear modulus based on the extent of
+         buckling where input is the extent of buckle'''
+        G_vs_ex=pd.read_csv('/Users/tomfenemore/RP3/EvsX.csv')
+        G_vs_ex=G_vs_ex.to_numpy()
+        spl = UnivariateSpline(G_vs_ex[:,0],G_vs_ex[:,1])
+        G=spl(self.buckle_ext)
+        return(G)
+
+    def shear_ctr_chg(self):
+        '''Function to define change in shear centre based on the shear modulus of the
+        buckled section (and the rest of the geometry'''
+        e=(self.buckle_G*self.buckle_thk)/((self.web_G*self.web_t)+(self.buckle_G*self.buckle_thk))*50
+        return e
+
+    def shear_ctr_org(self):
+        '''Function to give the original shear centre based on the un buckled shear
+        modulus of the buckling web'''
+        e=(self.buckle_G_ini*self.buckle_thk)/((self.web_G*self.web_t)+(self.buckle_G_ini*self.buckle_thk))*50
+        return e
+
+    def twist_at_node(self):
+        ''''Function to find the twist at each discretised node of the section which is
+        dependant on the buckle extent through the use of the st vennant function'''
+        v=self.buckle_e
+
+
+
+
+
+
+
+
+
+
+
+
+
