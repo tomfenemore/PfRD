@@ -7,10 +7,12 @@ class geometry():
     '''This class defines the geometry of interests and calculates the twist of a
     section dependant on the web thickness, buckle position and extent of buckle
     input at class initiation'''
-    def __init__(self, buckle_thk, buckle_ext):
+    def __init__(self, buckle_thk, x):
 
         self.buckle_thk = buckle_thk  # buckle web thickness
-        self.buckle_ext = buckle_ext  # extent of buckle to be input into mod change func
+        self.x = x  # span position
+        self.buckle()
+        self.buckle_ext = self.buckle()  # extent of buckle to be input into mod change func
         self.buckle_G_ini = 6.3792e+3  # shear modulus of buckle
         self.web_G = 1.7829e+4  # shear modulus of other walls
         self.web_t = 1.25  # web thickness
@@ -26,6 +28,15 @@ class geometry():
         self.force_func = 34*2  # FRom last year force required for buckle onset
         self.twist_at_node()
 
+    def buckle(self):
+        '''This is the initial buckle function but can change'''
+        b = 2 - self.x / 500
+        if b < 1:
+            b = 1
+        else:
+            b = b
+        return b
+
     def shear_mod_change(self):
         '''Function to define the change in shear modulus based on the extent of
          buckling where input is the extent of buckle'''
@@ -37,7 +48,6 @@ class geometry():
             G = 1
         else:
             G = G
-
         return G
 
     def shear_ctr_chg(self):

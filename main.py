@@ -11,13 +11,7 @@ import numpy as np
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-def buckle(x):
-    b = 2 - x/500
-    if b < 1:
-        b=1
-    else:
-        b=b
-    return b
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
@@ -25,7 +19,7 @@ if __name__ == '__main__':
     tottw=0
 
     for x in range(0,1001):
-        geom = g.geometry(0.5, buckle(x))
+        geom = g.geometry(0.5, x)
         twist[x]=geom.twist_at_node()
         print(twist[x])
         tottw= tottw + twist[x]
