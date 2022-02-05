@@ -1,5 +1,7 @@
 # This is a sample Python script.
 from Code import geometry as g
+import scipy.integrate as int
+import numpy as np
 
 
 # Press ⌃R to execute it or replace it with your code.
@@ -9,13 +11,28 @@ from Code import geometry as g
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
+def buckle(x):
+    b = 2 - x/500
+    if b < 1:
+        b=1
+    else:
+        b=b
+    return b
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    geom=g.geometry(0.5, 2)
-    print(geom.shear_mod_change())
-    print(geom.twist_at_node())
+    twist = {}
+    tottw=0
+
+    for x in range(0,1001):
+        geom = g.geometry(0.5, buckle(x))
+        twist[x]=geom.twist_at_node()
+        print(twist[x])
+        tottw= tottw + twist[x]
+    print(tottw)
+
+
+
 
 
 

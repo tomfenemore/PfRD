@@ -23,7 +23,7 @@ class geometry():
         self.shear_ctr_org()
         self.shear_ctr_chg()
         self.buckle_e = self.shear_ctr_org()-self.shear_ctr_chg()
-        self.force_func = 34*self.buckle_ext  # FRom last year force required for buckle onset
+        self.force_func = 34*2  # FRom last year force required for buckle onset
         self.twist_at_node()
 
     def shear_mod_change(self):
@@ -33,6 +33,11 @@ class geometry():
         G_vs_ex = G_vs_ex.to_numpy()
         spl = UnivariateSpline(G_vs_ex[:, 0], G_vs_ex[:, 1])
         G = spl(self.buckle_ext)
+        if G > 1:
+            G = 1
+        else:
+            G = G
+
         return G
 
     def shear_ctr_chg(self):
@@ -50,5 +55,5 @@ class geometry():
     def twist_at_node(self):
         ''''Function to find the twist at each discretised node of the section which is
         dependant on the buckle extent through the use of the st vennant function'''
-        v = (self.buckle_e*self.force_func/((4*50 ^ 2)) * (2*50/self.flange_G_t)+(50/self.web_G_t) + (50/(self.buckle_G*self.buckle_thk)))
+        v = (self.buckle_e*self.force_func/(4*50 ^ 2)) * (((2*50/self.flange_G_t)+(50/self.web_G_t) + (50/self.buckle_G*self.buckle_thk)))
         return v
