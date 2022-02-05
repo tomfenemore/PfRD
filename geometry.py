@@ -25,7 +25,7 @@ class geometry():
         self.shear_ctr_org()
         self.shear_ctr_chg()
         self.buckle_e = self.shear_ctr_org()-self.shear_ctr_chg()
-        self.force_func = 34*2  # FRom last year force required for buckle onset
+        self.force_func = 3.4*self.buckle_ext # FRom last year force required for buckle onset
         self.twist_at_node()
 
     def buckle(self):
