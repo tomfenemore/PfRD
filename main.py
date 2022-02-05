@@ -13,10 +13,9 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    geom=g.geometry(50,0.5, 2)
+    geom=g.geometry(0.5, 2)
     print(geom.shear_mod_change())
-    print(geom.shear_ctr_chg())
-    print(geom.shear_ctr_org())
+    print(geom.twist_at_node())
 
 
 
