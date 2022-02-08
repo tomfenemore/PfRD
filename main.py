@@ -15,14 +15,15 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    twist = {}
+    twist = np.zeros(1001)
     tottw=0
 
     for x in range(0,1001):
         geom = g.geometry(0.5, x)
         twist[x]=geom.twist_at_node()
         print(twist[x])
-        tottw= tottw + twist[x]
+        tottw = twist[x] + tottw
+
     print(tottw)
 
 
