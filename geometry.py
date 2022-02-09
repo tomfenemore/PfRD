@@ -7,14 +7,15 @@ class geometry():
     '''This class defines the geometry of interests and calculates the twist of a
     section dependant on the web thickness, buckle position and extent of buckle
     input at class initiation'''
-    def __init__(self, buckle_thk, x):
+    def __init__(self, buckle_thk, b, bkl_psn, E_root):
 
         self.buckle_thk = buckle_thk  # buckle web thickness
-        self.x = x  # span position
+        #self.x = x  # span position
         self.span = 1000  # span length
-        self.E_root = 2  # root buckle extent
-        self.buckle()
-        self.buckle_ext = self.buckle()  # extent of buckle to be input into mod change func
+        self.bkl_psn = bkl_psn
+        self.E_root = E_root # root buckle extent
+        #self.buckle()
+        self.buckle_ext = b  # extent of buckle to be input into mod change func
         self.buckle_G_ini = 6.3792e+3  # shear modulus of buckle
         self.web_G = 1.7829e+4  # shear modulus of other walls
         self.web_t = 1.25  # web thickness
@@ -27,17 +28,17 @@ class geometry():
         self.shear_ctr_org()
         self.shear_ctr_chg()
         self.buckle_e = self.shear_ctr_org()-self.shear_ctr_chg()
-        self.force_func = 34 * self.E_root  # FRom last year force required for buckle onset
-        self.twist_at_node()
+        self.force_func =  (34 * self.span)/(self.span - self.bkl_psn) * self.E_root  # FRom last year force required for buckle onset
+        #self.twist_at_node()
 
-    def buckle(self):
-        '''This is the initial buckle function but can change'''
-        b = 2 * ((self.span - self.x) / self.span) ** (self.E_root / 2)
-        if b < 1:
-            b = 1
-        else:
-            b = b
-        return b
+    #def buckle(self):
+        #'''This is the initial buckle function but can change'''
+        #b = 2 * ((self.span - self.x) / self.span) ** (self.E_root / 2)
+        #if b < 1:
+            #b = 1
+        #else:
+            #b = b
+        #return b
 
     def shear_mod_change(self):
         '''Function to define the change in shear modulus based on the extent of
@@ -64,9 +65,17 @@ class geometry():
         e=(self.buckle_G_ini*self.buckle_thk)/((self.web_G*self.web_t)+(self.buckle_G_ini*self.buckle_thk))*50
         return e
 
-    def twist_at_node(self):
+    def twist_at_node(self, M_o):
         ''''Function to find the twist at each discretised node of the section which is
         dependant on the buckle extent through the use of the st vennant function'''
-        v = (self.buckle_e*self.force_func/(4* (50 ** 2))) * (((2*50/self.flange_G_t)+(50/self.web_G_t) + (50/(self.buckle_G*self.buckle_thk))))
-        print(self.buckle_e)
-        return v
+        if self.buckle_e > 0:
+            M = self.buckle_e * self.force_func
+            v = (M / (4* (50 ** 2))) * (((2*50/self.flange_G_t)+(50/self.web_G_t) + (50/(self.buckle_G*self.buckle_thk))))
+        else:
+            M = M_o
+            v = (M / (4* (50 ** 2))) * (((2*50/self.flange_G_t) + 2 *(50/self.web_G_t)))
+
+        return v, M
+
+
+
