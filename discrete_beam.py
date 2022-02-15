@@ -5,7 +5,7 @@ import numpy as np
 def beam(X):
     bkl_psn = X[0]
     E_root = X[1]
-    str = 'uniform'
+    str = 'linear'
     twist = np.zeros(1001)
     M = np.zeros(1002)
     twist_profile = np.zeros(1001)
