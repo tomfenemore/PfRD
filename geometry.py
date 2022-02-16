@@ -95,6 +95,3 @@ class geometry():
                 v = (M / (4* (50 ** 2))) * (((2*50/self.flange_G_t) + 2 *(50/self.web_G_t)))
 
         return v, M
-
-
-
