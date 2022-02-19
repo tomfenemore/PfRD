@@ -3,15 +3,15 @@ from Code import geometry as g
 import buckle as b
 import scipy.integrate as int
 import numpy as np
-import discrete_beam as d
+import Beam as d
 from geneticalgorithm import geneticalgorithm as ga
 import Forcing as f
 
 if __name__ == '__main__':
-    forces = f.forces(np.zeros(1000), 0, 2)
-    print(forces.force, forces.moment, forces.buckle)
-    #X = [500, 2, 'uniform']
-    #beam = d.beam(X)
+    #forces = f.forces(np.zeros(1000), 0, 2)
+    #print(forces.force, forces.moment, forces.buckle)
+    X = [500, 2]
+    beam = d.beam(X)
     ####varbound = np.array([[0, 1000], [1, 3.5]])
     ###vartype = np.array([['int'],['real']])
     ##algorithm_param = {'max_num_iteration': 10, \

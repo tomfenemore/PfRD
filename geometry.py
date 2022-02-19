@@ -7,10 +7,9 @@ class geometry():
     '''This class defines the geometry of interests and calculates the twist of a
     section dependant on the web thickness, buckle position and extent of buckle
     input at class initiation'''
-    def __init__(self, x, buckle_thk, b, bkl_psn, E_root, str):
+    def __init__(self, x, buckle_thk, b, bkl_psn, E_root, str, M):
 
         self.buckle_thk = buckle_thk  # buckle web thickness
-        self.str = str  # string defining the load case
         self.x = x  # span position
         self.span = 1000  # span length
         self.bkl_psn = bkl_psn
@@ -29,18 +28,8 @@ class geometry():
         self.shear_ctr_org()
         self.shear_ctr_chg()
         self.buckle_e = self.shear_ctr_org()-self.shear_ctr_chg()
-        self.f_func()
-        self.force_func = self.f_func()  # From last year force required for buckle onset
+        self.force_func = M  # From last year force required for buckle onset
         #self.twist_at_node()
-
-    def f_func(self):
-        if self.str == 'tip':  #tip load
-            f = (34 * self.span)/(self.span - self.bkl_psn) * self.E_root
-        elif self.str == 'uniform':  # uniform distributed load
-            f = (34 * self.span) / ((self.span - self.bkl_psn) ** 2) * self.E_root
-        elif self.str == 'linear':  # linear to tip distributed load (rotor)
-            f = (34 * self.span) / ((self.span - self.bkl_psn) ** 3) * self.E_root
-        return f
 
     def shear_mod_change(self):
         '''Function to define the change in shear modulus based on the extent of
@@ -70,28 +59,11 @@ class geometry():
     def twist_at_node(self, M_o):
         ''''Function to find the twist at each discretised node of the section which is
         dependant on the buckle extent through the use of the st vennant function'''
-        if self.str == 'tip':
-            if self.buckle_e > 0:
-                M = self.buckle_e * self.force_func
-                v = (M / (4* (50 ** 2))) * (((2*50/self.flange_G_t)+(50/self.web_G_t) + (50/(self.buckle_G*self.buckle_thk))))
-            else:
-                M = M_o
-                v = (M / (4* (50 ** 2))) * (((2*50/self.flange_G_t) + 2 *(50/self.web_G_t)))
-
-        elif self.str == 'uniform':
-            if self.buckle_e > 0:
-                M = self.buckle_e * self.force_func * self.x
-                v = (M / (4* (50 ** 2))) * (((2*50/self.flange_G_t)+(50/self.web_G_t) + (50/(self.buckle_G*self.buckle_thk))))
-            else:
-                M = M_o
-                v = (M / (4* (50 ** 2))) * (((2*50/self.flange_G_t) + 2 *(50/self.web_G_t)))
-
-        elif self.str == 'linear':
-            if self.buckle_e > 0:
-                M = self.buckle_e * self.force_func * (self.x ** 2)
-                v = (M / (4* (50 ** 2))) * (((2*50/self.flange_G_t)+(50/self.web_G_t) + (50/(self.buckle_G*self.buckle_thk))))
-            else:
-                M = M_o
-                v = (M / (4* (50 ** 2))) * (((2*50/self.flange_G_t) + 2 *(50/self.web_G_t)))
+        if self.buckle_e > 0:
+            M = self.buckle_e * self.force_func
+            v = (M / (4* (50 ** 2))) * (((2*50/self.flange_G_t)+(50/self.web_G_t) + (50/(self.buckle_G*self.buckle_thk))))
+        else:
+            M = M_o
+            v = (M / (4* (50 ** 2))) * (((2*50/self.flange_G_t) + 2 *(50/self.web_G_t)))
 
         return v, M
