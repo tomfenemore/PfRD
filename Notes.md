@@ -31,3 +31,6 @@ mid spar position which is promising.
 I intend to try an explicit finite difference schema to find the steady state flow response of the beam. 
 This will give the more realistic response of the beam in a fluid. I hope to use this as part of the genetic algorithm 
 optimisation to find the best structure for M/L ratio.
+
+I have developed a function that calculates the force, moment and buckle over a spen which is then used in the Beam 
+function to re-evaluate a twist array. This array can then be iterated upon to find a steady state solution to the problem.
