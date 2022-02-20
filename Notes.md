@@ -34,3 +34,6 @@ optimisation to find the best structure for M/L ratio.
 
 I have developed a function that calculates the force, moment and buckle over a spen which is then used in the Beam 
 function to re-evaluate a twist array. This array can then be iterated upon to find a steady state solution to the problem.
+Finding a step sixe that works generally was trial and error. The current step is very small however speed seems ok and 
+convergence is quick. This seems to be require a smaller step as the buckle load increases. 
+
