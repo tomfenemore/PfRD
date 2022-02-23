@@ -18,7 +18,7 @@ def beam(X):
     i = 0
     while abs(d_f) > 1:
         i = i + 1
-        forces = f.forces(twist_profile * 0.00000001, bkl_psn, E_root)
+        forces = f.forces(twist_profile * 0.0001, bkl_psn, E_root)
         tw = twist_profile
 
         for x in reversed(range(0, 1000)):
@@ -28,11 +28,15 @@ def beam(X):
             tottw = twist[x] + tottw
 
         for x in range(1,1001):
-            twist_profile[x] = twist_profile[x-1]+twist[x]
+            twist_profile[0] = 0
+            twist_profile[x] = 0
+            twist_profile[x] = twist_profile[x-1] + twist[x]
+            #print(twist_profile[x])
         fo = f.forces(twist_profile, bkl_psn, E_root)
-        diff.append(fo.force.sum() - forces.force.sum())
+        diff.append(forces.force.sum() - fo.force.sum())
         d_f = diff[i] - diff[i-1]
         print('d_f', d_f)
+        print('tip twist:', twist_profile[999])
 
 
     l_profile = fo.force

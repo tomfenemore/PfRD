@@ -35,7 +35,10 @@ class forces():
     def buckles(self):
         b = np.zeros(1000)
         for x in range(0,1000):
-            b[x] = self.moment[x] / self.buckle_mom
+            if x > self.bkl_psn:
+                b[x] = self.moment[x] / self.buckle_mom
+            else:
+                b[x] = 0
         return b
 
 
