@@ -6,11 +6,12 @@ import numpy as np
 import Beam as d
 from geneticalgorithm import geneticalgorithm as ga
 import Forcing as f
+import pandas as pd
 
 if __name__ == '__main__':
     #forces = f.forces(np.zeros(1000), 0, 2)
     #print(forces.force, forces.moment, forces.buckle)
-    X = [800, 2]
+    X = [100, 2]
     beam = d.beam(X)
 
 
