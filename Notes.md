@@ -37,5 +37,8 @@ function to re-evaluate a twist array. This array can then be iterated upon to f
 The difference between initial and calculated twist arrey multiplied by a timestep is then added to the initial guess 
 and this error is reduced up until the point the error is reduced to an acceptable level. 
 
+##To Think About
+Would be quite interesting to have a look at the different outputs of the steady state and static solutions and see how
+that effects the buckle location and buckle extent that moment relief is increased. 
 
 
