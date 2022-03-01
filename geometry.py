@@ -63,7 +63,7 @@ class geometry():
             M = self.buckle_e * self.force_func
             v = (M / (4* (50 ** 2))) * (((2*50/self.flange_G_t)+(50/self.web_G_t) + (50/(self.buckle_G*self.buckle_thk))))
         else:
-            M = M_o
+            M = M_o / 1000
             v = (M / (4* (50 ** 2))) * (((2*50/self.flange_G_t) + 2 *(50/self.web_G_t)))
 
         return v, M

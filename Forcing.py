@@ -21,7 +21,7 @@ class forces():
         f = np.zeros(1000)
         dL = np.zeros(1000)
         for x in range(0,1000):
-            dL[x] = self.twist_profile[x] * 2 * math.pi
+            dL[x] = math.radians(self.twist_profile[x]) * 2 * math.pi
             f[x] = ((34 * self.span) / ((self.span - self.bkl_psn) ** 2) * self.E_root) - dL[x]
         return f
 

@@ -10,7 +10,7 @@ import Forcing as f
 if __name__ == '__main__':
     #forces = f.forces(np.zeros(1000), 0, 2)
     #print(forces.force, forces.moment, forces.buckle)
-    X = [700, 2]
+    X = [800, 2]
     beam = d.beam(X)
 
 
