@@ -20,7 +20,7 @@ def beam(X):
     t_diff = 0
     i = 1
     f_ini = f.forces(twist_profile[0], bkl_psn, E_root)
-    while abs(t_d) > 0.0001:
+    while abs(t_d) > twist_profile[i-1][1000] * 0.01:
 
         twist_profile.append((twist_profile[i-1] - (t_diff * 0.03)) )
         f_start = f.forces(twist_profile[i], bkl_psn, E_root)

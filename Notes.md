@@ -41,4 +41,5 @@ and this error is reduced up until the point the error is reduced to an acceptab
 Would be quite interesting to have a look at the different outputs of the steady state and static solutions and see how
 that effects the buckle location and buckle extent that moment relief is increased. 
 
-
+Might also be useful to plot the differences in tip twist between the FE, static and then steady state solutions as well
+as the FE (if i do it) for the steady state aerodynamic values. 
