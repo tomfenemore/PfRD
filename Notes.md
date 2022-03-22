@@ -43,3 +43,11 @@ that effects the buckle location and buckle extent that moment relief is increas
 
 Might also be useful to plot the differences in tip twist between the FE, static and then steady state solutions as well
 as the FE (if i do it) for the steady state aerodynamic values. 
+
+
+##GA Runs
+
+At this stage the GA runs have shown a general trennd to showing that the static runs like to be at a max outboard
+distance near enough however the steady state runs give an output that shoes that there is bennefit in bringing buckle 
+position inboard. One would assume this is due to simulated aero effects meaning that the significantly outboard buckle 
+positions are not actually sustained and give less load offset when steady state runs are accounnnted for. 
