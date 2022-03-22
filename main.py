@@ -7,12 +7,14 @@ import Beam as d
 from geneticalgorithm import geneticalgorithm as ga
 import Forcing as f
 import pandas as pd
+import GArun as GA
 
 if __name__ == '__main__':
-    #forces = f.forces(np.zeros(1000), 0, 2)
-    #print(forces.force, forces.moment, forces.buckle)
-    X = [100, 2]
-    beam = d.beam(X)
+    #X = [0, 3.5]
+    #d.beam(X)
+    GA.run()
+    df = pd.read_pickle('GA_run_output_static')
+    print(df)
 
 
 
