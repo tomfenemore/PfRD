@@ -90,4 +90,4 @@ def beam(X):
     print('tip twist:', prof[1000])
     print('dM_dL', dM_dL)
 
-    return dM_dL
+    return dM_dL, prof, geom.shear_ctr_org(), f_start.forces()
