@@ -11,12 +11,20 @@ import GArun as GA
 import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
+
+    quart = np.zeros(11)
+    print(quart)
     for i in range(11):
         X = [750,  (1+(i*0.1))]
         dmdl, twist, shearc, f_ini = d.beam(X)
-        print('______________________________')
-        print((1+(i*0.1)))
-        print(twist[1000])
+        quart[i] = twist[1000]
+    df = pd.DataFrame(quart)
+    df.to_excel('/Users/tomfenemore/Downloads/Analytical750.xlsx')
+    print(df)
+
+    #print('______________________________')
+    #print((1+(i*0.1)))
+    #print(twist[1000])
     #print(f_ini[1])
     #tw = pd.DataFrame(twist)
     #tw.to_excel('/Users/tomfenemore/Downloads/Analytical500.xlsx')
