@@ -1,5 +1,3 @@
-from Code import geometry as g
-import buckle as b
 import numpy as np
 import math
 class forces():

@@ -1,5 +1,4 @@
 from Code import geometry as g
-import buckle as b
 import numpy as np
 import Forcing as f
 
@@ -27,7 +26,7 @@ def beam(X):
                 prof = np.zeros(1001)
                 break
 
-            twist_profile.append((twist_profile[i-1] - (t_diff * 0.03)) )
+            twist_profile.append((twist_profile[i-1] - (t_diff * 0.3)) )
             f_start = f.forces(twist_profile[i], bkl_psn, E_root)
 
             for x in reversed(range(0, 1000)):
@@ -45,12 +44,13 @@ def beam(X):
             #twist_profile.append(prof)
             t_diff = twist_profile[i] - prof
             t_d = t_diff[1000]
+            print(i)
 
-            print('thresh', twist_profile[i-1][999] * 0.01)
-            print('tip twist difference', t_diff)
-            print('input tip twist', twist_profile[i][1000])  # 'twist_profile.sum', twist_profile[i].sum())
-            print('output tip twist:', prof[1000])
-            print('..............................')
+            #print('thresh', twist_profile[i-1][999] * 0.01)
+            #print('tip twist difference', t_diff)
+            #print('input tip twist', twist_profile[i][1000])  # 'twist_profile.sum', twist_profile[i].sum())
+            #print('output tip twist:', prof[1000])
+            #print('..............................')
             i = i + 1
 
     else:
@@ -71,11 +71,11 @@ def beam(X):
         t_diff = twist_profile[i] - prof
         t_d = t_diff[1000]
 
-        print('thresh', twist_profile[i - 1][999] * 0.01)
-        print('tip twist difference', t_diff)
-        print('input tip twist', twist_profile[i][1000])  # 'twist_profile.sum', twist_profile[i].sum())
-        print('output tip twist:', prof[1000])
-        print('..............................')
+        #print('thresh', twist_profile[i - 1][999] * 0.01)
+        #print('tip twist difference', t_diff)
+        ##print('input tip twist', twist_profile[i][1000])  # 'twist_profile.sum', twist_profile[i].sum())
+        #print('output tip twist:', prof[1000])
+        #print('..............................')
         i = i + 1
 
     f_end = f.forces(prof, bkl_psn, E_root)
@@ -85,9 +85,14 @@ def beam(X):
 
     d_L = l_profile.sum() - f_ini.force.sum()
     d_M = m_profile[0] - f_ini.moment[0]
+    d_M_norm = d_M / f_ini.moment[0]
+    d_L_norm = d_L / f_ini.force.sum()
+    dmdl_norm = d_M_norm / d_L_norm
     dM_dL = -d_M / d_L
+    ml = m_profile[0] / l_profile.sum()
+    dml = ml / (f_ini.moment[0]/f_ini.force.sum())
     print('............FINISHED............')
     print('tip twist:', prof[1000])
-    print('dM_dL', dM_dL)
+    print('dml', dml)
 
-    return dM_dL, prof, geom.shear_ctr_org(), f_start.forces()
+    return dml #, prof, geom.shear_ctr_org(), f_start.forces(), d_M, d_M_norm
