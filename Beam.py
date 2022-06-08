@@ -1,4 +1,4 @@
-from Code import geometry as g
+import geometry as g
 import numpy as np
 import Forcing as f
 
