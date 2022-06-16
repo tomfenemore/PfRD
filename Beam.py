@@ -3,7 +3,7 @@ import numpy as np
 import Forcing as f
 
 def beam(X):
-    steady_state = False
+    steady_state = True
     bkl_psn = X[0]
     print('bkl_psn', bkl_psn)
     E_root = X[1]
@@ -95,4 +95,4 @@ def beam(X):
     print('tip twist:', prof[1000])
     print('dml', dml)
 
-    return dml #, prof, geom.shear_ctr_org(), f_start.forces(), d_M, d_M_norm
+    return dml, f_end.force, prof #, geom.shear_ctr_org(), f_start.forces(), d_M, d_M_norm
