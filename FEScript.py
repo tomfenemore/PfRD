@@ -4,6 +4,7 @@ from caeModules import *
 from driverUtils import executeOnCaeStartup
 executeOnCaeStartup()
 from odbAccess import *
+import numpy as np
 
 # Apply forcing to structure
 F=141.4
@@ -18,3 +19,7 @@ mdb.jobs['half'].waitForCompletion()
 
 #  Get the required displacement data from the job
 ff = session.openOdb(name='half.odb')
+u = ff.steps['nlan'].historyRegions['NSET SET-58'].historyOutputs['UR3'].data
+
+#  save the data to a csv
+np.savetxt('C:\Users\\tf17417\OneDrive - University of Bristol\RP4FE\FEA\U_out.csv', u, delimiter=',', fmt='%d')
