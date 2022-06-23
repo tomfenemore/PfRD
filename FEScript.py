@@ -5,10 +5,10 @@ from driverUtils import executeOnCaeStartup
 executeOnCaeStartup()
 from odbAccess import *
 import numpy as np
-import pandas as pd
 
 
-F = pd.read_csv('F.csv')
+
+F = np.loadtxt("C:\Users\\tf17417\OneDrive - University of Bristol\RP4FE\PfRD\F.csv")
 openMdb(pathName='C:\Users\\tf17417\OneDrive - University of Bristol\RP4FE\FEA\Runkel half-2018.cae')  # open abaqus project
 for i in range(10):
     string = 'L-%s00'%(i+1)
