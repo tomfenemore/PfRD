@@ -12,7 +12,7 @@ import Force_Discretisation as FD
 X = [500, 2]  # Location, Extent
 
 #  Calculate initial force by inputting X into forces class
-f_ini = f.forces(twist_profile[0], bkl_psn, E_root)
+f_ini = f.forces(np.zeros(1000), X[0], X[1])
 F = FD.smear(f_ini)
 
 
