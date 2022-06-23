@@ -1,12 +1,14 @@
 import numpy as np
 import Forcing as f
 import Force_Discretisation as FD
+import Beam as d
+
 
 #  Define the buckle location and extent
 X = [500, 2]  # Location, Extent
 
-#  Calculate initial force by inputting X into forces class and save as csv file
-f_ini = f.forces(np.zeros(1000), X[0], X[1])
+X = [500, 2]  # This section of code runs the simple analytical calculation
+dml, f_ini, twist = d.beam(X)
 F = FD.smear(f_ini)
 np.savetxt('C:\Users\\tf17417\OneDrive - University of Bristol\RP4FE\FEA\F.csv', F, delimiter=',')
 
