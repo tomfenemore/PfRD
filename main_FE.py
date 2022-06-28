@@ -10,5 +10,6 @@ X = [500, 2]  # Location, Extent
 X = [500, 2]  # This section of code runs the simple analytical calculation
 dml, f_ini, twist = d.beam(X)
 F = FD.smear(f_ini)
-#np.savetxt('C:\Users\\tf17417\OneDrive - University of Bristol\RP4FE\FEA\F.csv', F, delimiter=',')
+np.savetxt('F.csv', F, delimiter=',')
+
 
