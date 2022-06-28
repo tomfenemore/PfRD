@@ -33,7 +33,7 @@ class geometry():
     def shear_mod_change(self):
         '''Function to define the change in shear modulus based on the extent of
          buckling where input is the extent of buckle'''
-        G_vs_ex = pd.read_csv('/Users/tomfenemore/RP3/EvsX.csv')
+        G_vs_ex =pd.read_csv('EvsX.csv')
         G_vs_ex = G_vs_ex.to_numpy()
         spl = UnivariateSpline(G_vs_ex[:, 0], G_vs_ex[:, 1])
         G = spl(self.buckle_ext)
