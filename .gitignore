@@ -1,3 +1,14 @@
 venv/
 .idea/ERP.iml/
 .idea/misc.xml/
+abaqus.rpy
+abaqus_acis.log
+half.com
+half.dat
+half.inp
+half.log
+half.msg
+half.odb
+half.prt
+half.sim
+half.sta

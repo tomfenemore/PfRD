@@ -12,8 +12,11 @@ X = [500, 2]  # This section of code runs the simple analytical calculation
 dml, f_ini, twist = d.beam(X)
 F = FD.smear(f_ini)
 np.savetxt('F.csv', F, delimiter=',')
-
-subprocess.run('abaqus cae noGUI="C:\Users\tf17417\OneDrive - University of Bristol\RP4FE\PfRD\FEScript.py"')
+print('run FE script')
+#sp = subprocess.run('cd', shell=True, capture_output=True)
+sp = subprocess.run('abaqus cae noGUI="FEScript.py"', shell=True,capture_output=True)
+print(sp)
+print('FE script has finished')
 
 
 
