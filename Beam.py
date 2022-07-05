@@ -10,8 +10,7 @@ def beam(X):
     print('E_root', E_root)
     twist = np.zeros(1001)
     M = np.zeros(1002)
-    twist_profile = []
-    twist_profile.append(np.zeros(1001))
+    twist_profile = X[2]
     t_diff = np.zeros(1001)
     prof = np.zeros(1001)
     str = 'tip'
@@ -19,7 +18,7 @@ def beam(X):
     tottw = 0
     t_diff = 0
     i = 1
-    f_ini = f.forces(twist_profile[0], bkl_psn, E_root)
+    f_ini = f.forces(twist_profile, bkl_psn, E_root)
     if steady_state == True:
         while abs(t_d) > abs(twist_profile[i-1][1000] * 0.01):
             if i >= 1000:

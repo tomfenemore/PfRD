@@ -1,19 +1,22 @@
 import numpy as np
 import Forcing as f
 import Force_Discretisation as FD
-import Beam as d
+
+import Forcing as d
 import subprocess
 import Clean as cl
 import twist
 
 
 #  Define the buckle location and extent
-#X = [500, 2]  # Location, Extent
+tw_ini = np.zeros(1001)
+X = [500, 2, tw_ini]  # Location, Extent
 
-#X = [500, 2]  # This section of code runs the simple analytical calculation
-#dml, f_ini, twist = d.beam(X)
-#F = FD.smear(f_ini)
-#np.savetxt('F.csv', F, delimiter=',')
+# This section of code runs the simple analytical calculation
+f = d.forces(X[2], X[0], X[1])
+f_ini = f.force
+F = FD.smear(f_ini)
+np.savetxt('F.csv', F, delimiter=',')
 print('run FE script')
 #sp = subprocess.run('cd', shell=True, capture_output=True)
 #sp = subprocess.run('abaqus cae noGUI="FEScript.py"', shell=True,capture_output=True)
