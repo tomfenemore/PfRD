@@ -33,3 +33,4 @@ def clean(str):
 
     #print(new_hf)
     new_hf.to_excel(f'Clean-{str}.xlsx')
+    return new_hf[' UR deg'].iloc[-1]

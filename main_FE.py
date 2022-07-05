@@ -4,6 +4,7 @@ import Force_Discretisation as FD
 import Beam as d
 import subprocess
 import Clean as cl
+import twist
 
 
 #  Define the buckle location and extent
@@ -20,9 +21,14 @@ print('run FE script')
 print('FE script has finished')
 
 # Now clean the data out of the FE file output
-for i in range(100, 1001, 100):
-    cl.clean(i)
+orig_tw = np.zeros(11)
+for i in range(1, 11, 1):
+    orig_tw[i] = cl.clean(i*100)
 
+# Add twists from each section together to get a spanwise distribution
+twists = twist.tw(orig_tw)
+
+# Add this back into aero model
 
 
 
