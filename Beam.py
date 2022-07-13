@@ -3,7 +3,7 @@ import numpy as np
 import Forcing as f
 
 def beam(X):
-    steady_state = False
+    steady_state = True
     bkl_psn = X[0]
     print('bkl_psn', bkl_psn)
     E_root = X[1]
