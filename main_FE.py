@@ -31,7 +31,7 @@ while abs(t_d) > abs(X[2][1000] * 0.01):
     orig_tw = np.zeros(11)
     for i in range(1, 11, 1):
         orig_tw[i] = cl.clean(i*100)
-
+    print(orig_tw)
     # Add twists from each section together to get a spanwise distribution
     t_diff = X[2] - twist.tw(orig_tw)
     t_d = t_diff[1000]

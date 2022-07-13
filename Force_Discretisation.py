@@ -14,6 +14,6 @@ def smear(F):
             moms[j] = F_dist[j]
             mom_tot[i] = sum(moms[range(sec-100,sec)])
         i+=1
-
+    print(mom_tot)
     return mom_tot*10
 

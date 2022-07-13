@@ -25,11 +25,11 @@ def clean(str):
             new_hf[col] = half[' UR'] - (m * (half['# LPF']) + c)
 
 
-
+    deg = np.zeros(len(new_hf[' UR']))
     for i in range(len(new_hf[' UR'])):
-        new_hf[' UR deg'] = math.degrees(new_hf[' UR'][i])
+        deg[i] = math.degrees(new_hf[' UR'][i])
 
-
+    new_hf[' UR deg'] = deg
 
     #print(new_hf)
     new_hf.to_excel(f'Clean-{str}.xlsx')
