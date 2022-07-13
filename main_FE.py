@@ -1,7 +1,5 @@
 import numpy as np
-import Forcing as f
 import Force_Discretisation as FD
-
 import Forcing as d
 import subprocess
 import Clean as cl
