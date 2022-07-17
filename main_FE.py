@@ -5,7 +5,7 @@ import subprocess
 import Clean as cl
 import twist
 
-
+run = 'half'
 #  Define the buckle location and extent
 tw_ini = np.zeros(1001)
 X = [500, 2, tw_ini]  # Location, Extent
@@ -21,14 +21,14 @@ while abs(t_d) > abs(X[2][1000] * 0.01):
     np.savetxt('F.csv', F, delimiter=',')
     print('run FE script')
     #sp = subprocess.run('cd', shell=True, capture_output=True)
-    sp = subprocess.run('abaqus cae noGUI="FEScript.py"', shell=True,capture_output=True)
+    sp = subprocess.run('abaqus cae noGUI="FEScript_%s.py"'%run, shell=True,capture_output=True)
     print(sp)
     print('FE script has finished')
 
     # Now clean the data out of the FE file output
     orig_tw = np.zeros(11)
     for i in range(1, 11, 1):
-        orig_tw[i] = cl.clean(i*100)
+        orig_tw[i] = cl.clean(i*100, run)
     print(orig_tw)
     # Add twists from each section together to get a spanwise distribution
     t_diff = X[2] - twist.tw(orig_tw)

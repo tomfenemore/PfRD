@@ -12,7 +12,7 @@ F = np.loadtxt("C:\Users\\tf17417\OneDrive - University of Bristol\RP4FE\PfRD\F.
 openMdb(pathName="C:\Users\\tf17417\OneDrive - University of Bristol\RP4FE\FEA\Runkel half-2018.cae")  # open abaqus project
 for i in range(10):
     string = 'L-%s00'%(i+1)
-    mdb.models['halfbuckle'].loads[string].setValues(cf2=F[0])
+    mdb.models['halfbuckle'].loads[string].setValues(cf2=F[i])
 
 #  Create and Run the Job
 mdb.jobs['half'].submit(consistencyChecking=OFF)
