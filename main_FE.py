@@ -12,6 +12,10 @@ X = [750, 2, tw_ini]  # Location, Extent
 t_diff = np.zeros(1001)
 t_d = 1000
 
+#run the section script for this specific section:
+sp = subprocess.run('abaqus cae noGUI="sections_%s.py"'%run, shell=True,capture_output=True)
+print(sp)
+
 # This section of code runs the simple analytical calculation
 while abs(t_d) > abs(X[2][1000] * 0.01):
     X[2] = X[2] - (t_diff * 0.3)
