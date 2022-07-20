@@ -5,10 +5,10 @@ import subprocess
 import Clean as cl
 import twist
 
-run = 'half'
+run = 'threequarter'
 #  Define the buckle location and extent
 tw_ini = np.zeros(1001)
-X = [500, 2, tw_ini]  # Location, Extent
+X = [750, 2, tw_ini]  # Location, Extent
 t_diff = np.zeros(1001)
 t_d = 1000
 

@@ -15,8 +15,8 @@ for i in range(10):
     mdb.models['quarterbuckle'].loads[string].setValues(cf2=F[i])
 
 #  Create and Run the Job
-mdb.jobs['quarter'].submit(consistencyChecking=OFF)
-mdb.jobs['quarter'].waitForCompletion()
+mdb.jobs["quarter"].submit(consistencyChecking=OFF)
+mdb.jobs["quarter"].waitForCompletion()
 
 #  Get the required displacement data from the job
 f = session.openOdb(name='quarter.odb')

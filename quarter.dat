@@ -1,0 +1,561 @@
+1
+
+   Abaqus 2021                                  Date 18-Jul-2022   Time 11:17:41
+   For use by UNIVERSITY OF BRISTOL under license from Dassault Systemes or its subsidiary.
+
+
+
+                         The Abaqus Software is a product of:
+
+                           Dassault Systemes SIMULIA Corp.
+                           1301 Atwood Avenue, Suite 101W
+                              Johnston, RI 02919, USA
+ 
+
+
+                   The Abaqus Software is available only under license
+                   from Dassault Systemes or its subsidiary and may be
+                   used or reproduced only in accordance with the terms
+                   of such license.
+ 
+                          On machine HP-P6-12 
+                          you are authorized to run
+                          Abaqus/Standard until 17-Sep-2022
+
+                          Your site id is: SIT00004275 
+
+
+ 
+                    For assistance or any other information you may
+                    obtain contact information for your local office
+                    from the world wide web at:
+
+                      http://www.3ds.com/products/simulia/locations/
+
+ 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+                *                                                         * 
+                *                   *****************                     * 
+                *                   *  N O T I C E  *                     * 
+                *                   *****************                     * 
+                *                                                         * 
+                *                                                         * 
+                *                       Abaqus 2021                       * 
+                *                                                         * 
+                *          BUILD ID: 2020_03_06-14.50.37 167380           * 
+                *                                                         * 
+                *                                                         * 
+                *  Please make sure you are using                         * 
+                *  release Abaqus 2021 manuals                            * 
+                *  plus the notes accompanying this release.              * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *   This program may not be used for commercial purposes  * 
+                *           without payment of a commercial fee.          * 
+                *                                                         * 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+ 
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *Heading
+  *Node
+  *Element, type=S4R
+  *Nset, nset=ASSEMBLY_PART-1-1_FORCE
+  *Nset, nset=ASSEMBLY_PART-1-1_LEBOTTOM
+  *Nset, nset=ASSEMBLY_PART-1-1_LETOP
+  *Nset, nset=ASSEMBLY_PART-1-1_PART-1-1-REFPT_
+  *Nset, nset=ASSEMBLY_PART-1-1_SET-1
+  *Nset, nset=ASSEMBLY_PART-1-1_SET-2
+  *Nset, nset=ASSEMBLY_PART-1-1_SET-3
+  *Nset, nset=ASSEMBLY_PART-1-1_SET-4
+  *Nset, nset=ASSEMBLY_PART-1-1_SET-5
+  *Nset, nset=ASSEMBLY_PART-1-1_TEBOTTOM
+  *Nset, nset=ASSEMBLY_PART-1-1_TETOP
+  *Elset, elset=ASSEMBLY_PART-1-1_FORCE
+  *Elset, elset=ASSEMBLY_PART-1-1_SET-1
+  *Elset, elset=ASSEMBLY_PART-1-1_SET-2
+  *Elset, elset=ASSEMBLY_PART-1-1_SET-3
+  *Elset, elset=ASSEMBLY_PART-1-1_SET-4
+  *Elset, elset=ASSEMBLY_PART-1-1_SET-5
+  *Node
+  *Nset, nset=ASSEMBLY_M_SET-12
+  *Nset, nset=ASSEMBLY_M_SET-31
+  *Nset, nset=ASSEMBLY_M_SET-33
+  *Nset, nset=ASSEMBLY_M_SET-35
+  *Nset, nset=ASSEMBLY_M_SET-37
+  *Nset, nset=ASSEMBLY_M_SET-39
+  *Nset, nset=ASSEMBLY_M_SET-44
+  *Nset, nset=ASSEMBLY_SET-1
+  *Nset, nset=ASSEMBLY_SET-14
+  *Nset, nset=ASSEMBLY_SET-15
+  *Nset, nset=ASSEMBLY_SET-16
+  *Nset, nset=ASSEMBLY_SET-41
+  *Nset, nset=ASSEMBLY_SET-42
+  *Nset, nset=ASSEMBLY_SET-43
+  *Nset, nset=ASSEMBLY_SET-46
+  *Nset, nset=ASSEMBLY_SET-47
+  *Nset, nset=ASSEMBLY_SET-48
+  *Nset, nset=ASSEMBLY_SET-49
+  *Nset, nset=ASSEMBLY_SET-50
+  *Nset, nset=ASSEMBLY_SET-51
+  *Nset, nset=ASSEMBLY_SET-52
+  *Nset, nset=ASSEMBLY_SET-53
+  *Nset, nset=ASSEMBLY_SET-54
+  *Nset, nset=ASSEMBLY_SET-55
+  *Nset, nset=ASSEMBLY_SET-6
+  *Nset, nset=ASSEMBLY_SET-7
+  *Nset, nset=ASSEMBLY_S_SET-12
+  *Nset, nset=ASSEMBLY_S_SET-31
+  *Nset, nset=ASSEMBLY_S_SET-35
+  *Nset, nset=ASSEMBLY_S_SET-37
+  *Nset, nset=ASSEMBLY_S_SET-39
+  *Nset, nset=ASSEMBLY_S_SET-43
+  *Nset, nset=ASSEMBLY_S_SET-44
+  *Nset, nset=ASSEMBLY__PICKEDSET51
+  *Nset, nset=ASSEMBLY__PICKEDSET52
+  *Nset, nset=ASSEMBLY__PICKEDSET53
+  *Nset, nset=ASSEMBLY__PICKEDSET54
+  *Nset, nset=ASSEMBLY__PICKEDSET55
+  *Nset, nset=ASSEMBLY__PICKEDSET56
+  *Nset, nset=ASSEMBLY__PICKEDSET57
+  *Nset, nset=ASSEMBLY__PICKEDSET58
+  *Nset, nset=ASSEMBLY__PICKEDSET59
+  *Nset, nset=ASSEMBLY__PICKEDSET60
+  *Elset, elset=ASSEMBLY_SET-1
+  *Elset, elset=ASSEMBLY_SET-16
+  *Elset, elset=ASSEMBLY_SET-42
+  *Elset, elset=ASSEMBLY_SET-6
+  *Elset, elset=ASSEMBLY_SET-7
+  *Elset, elset=ASSEMBLY_S_SET-12
+  *material, name=CFRP
+  *density
+  *elastic, type=LAMINA
+  *failstress
+
+ ***WARNING: COMPRESSIVE FAILURE VALUES MUST BE NEGATIVE. NEGATIVE OF INPUT 
+             TAKEN.
+ LINE IMAGE: *failstress
+
+ ***WARNING: NO BIAXIAL STRESS LIMIT GIVEN.  DEFAULT F12 USED.
+  *material, name=GFRP
+  *elastic, type=LAMINA
+  *failstress
+
+ ***WARNING: COMPRESSIVE FAILURE VALUES MUST BE NEGATIVE. NEGATIVE OF INPUT 
+             TAKEN.
+ LINE IMAGE: *failstress
+
+ ***WARNING: NO BIAXIAL STRESS LIMIT GIVEN.  DEFAULT F12 USED.
+  *shellsection, elset=ASSEMBLY_PART-1-1_SET-2, composite, symmetric
+  *shellsection, elset=ASSEMBLY_PART-1-1_SET-3, composite, symmetric
+  *shellsection, elset=ASSEMBLY_PART-1-1_SET-4, layup=BUCKLE, composite, symmetric
+  *shellsection, elset=ASSEMBLY_PART-1-1_SET-5, composite, symmetric
+
+ ***NOTE: Correction to *SHELL SECTION, COMPOSITE data: 11 layer orientation 
+          angles greater than 90 degrees were reset to equivalent angles in the 
+          interval (-90,90).  The largest angle was 115.00.
+  *shellsection, elset=ASSEMBLY_PART-1-1_SET-2, composite, symmetric
+  *shellsection, elset=ASSEMBLY_PART-1-1_SET-3, composite, symmetric
+  *shellsection, elset=ASSEMBLY_PART-1-1_SET-4, layup=BUCKLE, composite, symmetric
+  *shellsection, elset=ASSEMBLY_PART-1-1_SET-5, composite, symmetric
+  *surface, type=NODE, name=ASSEMBLY__PICKEDSET51_CNS_
+  *surface, type=NODE, name=ASSEMBLY__PICKEDSET53_CNS_
+  *surface, type=NODE, name=ASSEMBLY__PICKEDSET55_CNS_
+  *surface, type=NODE, name=ASSEMBLY__PICKEDSET57_CNS_
+  *surface, type=NODE, name=ASSEMBLY__PICKEDSET59_CNS_
+  *surface, type=NODE, name=ASSEMBLY_S_SET-31_CNS_
+  *surface, type=NODE, name=ASSEMBLY_S_SET-43_CNS_
+  *surface, type=NODE, name=ASSEMBLY_S_SET-37_CNS_
+  *surface, type=NODE, name=ASSEMBLY_S_SET-39_CNS_
+  *surface, type=NODE, name=ASSEMBLY_S_SET-44_CNS_
+  *surface, type=NODE, name=ASSEMBLY__PICKEDSET51_CNS_
+  *surface, type=NODE, name=ASSEMBLY__PICKEDSET53_CNS_
+  *surface, type=NODE, name=ASSEMBLY__PICKEDSET55_CNS_
+  *surface, type=NODE, name=ASSEMBLY__PICKEDSET57_CNS_
+  *surface, type=NODE, name=ASSEMBLY__PICKEDSET59_CNS_
+  *surface, type=NODE, name=ASSEMBLY_S_SET-31_CNS_
+  *surface, type=NODE, name=ASSEMBLY_S_SET-43_CNS_
+  *surface, type=NODE, name=ASSEMBLY_S_SET-37_CNS_
+  *surface, type=NODE, name=ASSEMBLY_S_SET-39_CNS_
+  *surface, type=NODE, name=ASSEMBLY_S_SET-44_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-1, refnode=ASSEMBLY__PICKEDSET52, surface=ASSEMBLY__PICKEDSET51_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-2, refnode=ASSEMBLY__PICKEDSET54, surface=ASSEMBLY__PICKEDSET53_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-3, refnode=ASSEMBLY__PICKEDSET56, surface=ASSEMBLY__PICKEDSET55_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-4, refnode=ASSEMBLY__PICKEDSET58, surface=ASSEMBLY__PICKEDSET57_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-5, refnode=ASSEMBLY__PICKEDSET60, surface=ASSEMBLY__PICKEDSET59_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-6, refnode=ASSEMBLY_M_SET-31, surface=ASSEMBLY_S_SET-31_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-8, refnode=ASSEMBLY_M_SET-35, surface=ASSEMBLY_S_SET-43_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-9, refnode=ASSEMBLY_M_SET-37, surface=ASSEMBLY_S_SET-37_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-10, refnode=ASSEMBLY_M_SET-39, surface=ASSEMBLY_S_SET-39_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-11, refnode=ASSEMBLY_M_SET-44, surface=ASSEMBLY_S_SET-44_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-1, refnode=ASSEMBLY__PICKEDSET52, surface=ASSEMBLY__PICKEDSET51_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-2, refnode=ASSEMBLY__PICKEDSET54, surface=ASSEMBLY__PICKEDSET53_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-3, refnode=ASSEMBLY__PICKEDSET56, surface=ASSEMBLY__PICKEDSET55_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-4, refnode=ASSEMBLY__PICKEDSET58, surface=ASSEMBLY__PICKEDSET57_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-5, refnode=ASSEMBLY__PICKEDSET60, surface=ASSEMBLY__PICKEDSET59_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-6, refnode=ASSEMBLY_M_SET-31, surface=ASSEMBLY_S_SET-31_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-8, refnode=ASSEMBLY_M_SET-35, surface=ASSEMBLY_S_SET-43_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-9, refnode=ASSEMBLY_M_SET-37, surface=ASSEMBLY_S_SET-37_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-10, refnode=ASSEMBLY_M_SET-39, surface=ASSEMBLY_S_SET-39_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-11, refnode=ASSEMBLY_M_SET-44, surface=ASSEMBLY_S_SET-44_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-1, refnode=ASSEMBLY__PICKEDSET52, surface=ASSEMBLY__PICKEDSET51_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-2, refnode=ASSEMBLY__PICKEDSET54, surface=ASSEMBLY__PICKEDSET53_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-3, refnode=ASSEMBLY__PICKEDSET56, surface=ASSEMBLY__PICKEDSET55_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-4, refnode=ASSEMBLY__PICKEDSET58, surface=ASSEMBLY__PICKEDSET57_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-5, refnode=ASSEMBLY__PICKEDSET60, surface=ASSEMBLY__PICKEDSET59_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-6, refnode=ASSEMBLY_M_SET-31, surface=ASSEMBLY_S_SET-31_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-8, refnode=ASSEMBLY_M_SET-35, surface=ASSEMBLY_S_SET-43_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-9, refnode=ASSEMBLY_M_SET-37, surface=ASSEMBLY_S_SET-37_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-10, refnode=ASSEMBLY_M_SET-39, surface=ASSEMBLY_S_SET-39_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-11, refnode=ASSEMBLY_M_SET-44, surface=ASSEMBLY_S_SET-44_CNS_
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-1, refnode=ASSEMBLY__PICKEDSET52, surface=ASSEMBLY__PICKEDSET51_CNS_
+  *distributing, weightingmethod=UNIFORM, coupling=STRUCTURAL
+
+ ***NOTE: A DISTRIBUTED COUPLING DEFINITION WITH COUPLING=STRUCTURAL WILL 
+          IGNORE THE STRUCTURAL COUPLING AS THE SURFACE USED IN THE DEFINITION 
+          IS EITHER NODE-BASED OR THE REFERENCE NODE DOES NOT PROJECT ONTO THE 
+          SURFACE.
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-2, refnode=ASSEMBLY__PICKEDSET54, surface=ASSEMBLY__PICKEDSET53_CNS_
+  *distributing, weightingmethod=UNIFORM, coupling=STRUCTURAL
+
+ ***NOTE: A DISTRIBUTED COUPLING DEFINITION WITH COUPLING=STRUCTURAL WILL 
+          IGNORE THE STRUCTURAL COUPLING AS THE SURFACE USED IN THE DEFINITION 
+          IS EITHER NODE-BASED OR THE REFERENCE NODE DOES NOT PROJECT ONTO THE 
+          SURFACE.
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-3, refnode=ASSEMBLY__PICKEDSET56, surface=ASSEMBLY__PICKEDSET55_CNS_
+  *distributing, weightingmethod=UNIFORM, coupling=STRUCTURAL
+
+ ***NOTE: A DISTRIBUTED COUPLING DEFINITION WITH COUPLING=STRUCTURAL WILL 
+          IGNORE THE STRUCTURAL COUPLING AS THE SURFACE USED IN THE DEFINITION 
+          IS EITHER NODE-BASED OR THE REFERENCE NODE DOES NOT PROJECT ONTO THE 
+          SURFACE.
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-4, refnode=ASSEMBLY__PICKEDSET58, surface=ASSEMBLY__PICKEDSET57_CNS_
+  *distributing, weightingmethod=UNIFORM, coupling=STRUCTURAL
+
+ ***NOTE: A DISTRIBUTED COUPLING DEFINITION WITH COUPLING=STRUCTURAL WILL 
+          IGNORE THE STRUCTURAL COUPLING AS THE SURFACE USED IN THE DEFINITION 
+          IS EITHER NODE-BASED OR THE REFERENCE NODE DOES NOT PROJECT ONTO THE 
+          SURFACE.
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-5, refnode=ASSEMBLY__PICKEDSET60, surface=ASSEMBLY__PICKEDSET59_CNS_
+  *distributing, weightingmethod=UNIFORM, coupling=STRUCTURAL
+
+ ***NOTE: A DISTRIBUTED COUPLING DEFINITION WITH COUPLING=STRUCTURAL WILL 
+          IGNORE THE STRUCTURAL COUPLING AS THE SURFACE USED IN THE DEFINITION 
+          IS EITHER NODE-BASED OR THE REFERENCE NODE DOES NOT PROJECT ONTO THE 
+          SURFACE.
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-6, refnode=ASSEMBLY_M_SET-31, surface=ASSEMBLY_S_SET-31_CNS_
+  *distributing, weightingmethod=UNIFORM, coupling=STRUCTURAL
+
+ ***NOTE: A DISTRIBUTED COUPLING DEFINITION WITH COUPLING=STRUCTURAL WILL 
+          IGNORE THE STRUCTURAL COUPLING AS THE SURFACE USED IN THE DEFINITION 
+          IS EITHER NODE-BASED OR THE REFERENCE NODE DOES NOT PROJECT ONTO THE 
+          SURFACE.
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-8, refnode=ASSEMBLY_M_SET-35, surface=ASSEMBLY_S_SET-43_CNS_
+  *distributing, weightingmethod=UNIFORM, coupling=STRUCTURAL
+
+ ***NOTE: A DISTRIBUTED COUPLING DEFINITION WITH COUPLING=STRUCTURAL WILL 
+          IGNORE THE STRUCTURAL COUPLING AS THE SURFACE USED IN THE DEFINITION 
+          IS EITHER NODE-BASED OR THE REFERENCE NODE DOES NOT PROJECT ONTO THE 
+          SURFACE.
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-9, refnode=ASSEMBLY_M_SET-37, surface=ASSEMBLY_S_SET-37_CNS_
+  *distributing, weightingmethod=UNIFORM, coupling=STRUCTURAL
+
+ ***NOTE: A DISTRIBUTED COUPLING DEFINITION WITH COUPLING=STRUCTURAL WILL 
+          IGNORE THE STRUCTURAL COUPLING AS THE SURFACE USED IN THE DEFINITION 
+          IS EITHER NODE-BASED OR THE REFERENCE NODE DOES NOT PROJECT ONTO THE 
+          SURFACE.
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-10, refnode=ASSEMBLY_M_SET-39, surface=ASSEMBLY_S_SET-39_CNS_
+  *distributing, weightingmethod=UNIFORM, coupling=STRUCTURAL
+
+ ***NOTE: A DISTRIBUTED COUPLING DEFINITION WITH COUPLING=STRUCTURAL WILL 
+          IGNORE THE STRUCTURAL COUPLING AS THE SURFACE USED IN THE DEFINITION 
+          IS EITHER NODE-BASED OR THE REFERENCE NODE DOES NOT PROJECT ONTO THE 
+          SURFACE.
+  *coupling, constraintname=ASSEMBLY_CONSTRAINT-11, refnode=ASSEMBLY_M_SET-44, surface=ASSEMBLY_S_SET-44_CNS_
+  *distributing, weightingmethod=UNIFORM, coupling=STRUCTURAL
+
+ ***NOTE: A DISTRIBUTED COUPLING DEFINITION WITH COUPLING=STRUCTURAL WILL 
+          IGNORE THE STRUCTURAL COUPLING AS THE SURFACE USED IN THE DEFINITION 
+          IS EITHER NODE-BASED OR THE REFERENCE NODE DOES NOT PROJECT ONTO THE 
+          SURFACE.
+  *boundary
+  *boundary
+  *surface, type=NODE, name=ASSEMBLY__PICKEDSET51_CNS_
+  *surface, type=NODE, name=ASSEMBLY__PICKEDSET53_CNS_
+  *surface, type=NODE, name=ASSEMBLY__PICKEDSET55_CNS_
+  *surface, type=NODE, name=ASSEMBLY__PICKEDSET57_CNS_
+  *surface, type=NODE, name=ASSEMBLY__PICKEDSET59_CNS_
+  *surface, type=NODE, name=ASSEMBLY_S_SET-31_CNS_
+  *surface, type=NODE, name=ASSEMBLY_S_SET-43_CNS_
+  *surface, type=NODE, name=ASSEMBLY_S_SET-37_CNS_
+  *surface, type=NODE, name=ASSEMBLY_S_SET-39_CNS_
+  *surface, type=NODE, name=ASSEMBLY_S_SET-44_CNS_
+  *output, field
+  *output, history
+  *output, history, variable=PRESELECT
+  *elementoutput, directions=YES
+  *output, field
+  *output, history
+  *output, history, variable=PRESELECT
+  *elementoutput, directions=YES
+  *output, field
+  *output, history
+  *output, history, variable=PRESELECT
+  *elementoutput, directions=YES
+  *Step, name=nlan, nlgeom=YES, inc=300
+  *output, field
+  *output, history
+  *output, history, variable=PRESELECT
+  *Step, name=nlan, nlgeom=YES, inc=300
+  *Step, name=nlan, nlgeom=YES, inc=300
+  *static, riks
+  *boundary
+  *output, field
+  *nodeoutput
+  *elementoutput, directions=YES
+  *contactoutput
+  *nodeoutput, nset=ASSEMBLY_PART-1-1_LEBOTTOM
+  *nodeoutput, nset=ASSEMBLY_PART-1-1_LETOP
+  *nodeoutput, nset=ASSEMBLY_PART-1-1_TEBOTTOM
+  *nodeoutput, nset=ASSEMBLY_PART-1-1_TETOP
+  *output, history
+  *nodeoutput, nset=ASSEMBLY_SET-43
+  *nodeoutput, nset=ASSEMBLY_SET-46
+  *nodeoutput, nset=ASSEMBLY_SET-47
+  *nodeoutput, nset=ASSEMBLY_SET-48
+  *nodeoutput, nset=ASSEMBLY_SET-49
+  *nodeoutput, nset=ASSEMBLY_SET-50
+  *nodeoutput, nset=ASSEMBLY_SET-51
+  *nodeoutput, nset=ASSEMBLY_SET-52
+  *nodeoutput, nset=ASSEMBLY_SET-53
+  *nodeoutput, nset=ASSEMBLY_SET-54
+  *nodeoutput, nset=ASSEMBLY_SET-55
+  *output, history, variable=PRESELECT
+  *endstep
+
+ ***NOTE: OUTPUT REQUEST EEQUT IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST MVF IS NOT AVAILABLE FOR ANY MATERIAL OF THE COMPOSITE 
+          SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST PE IS NOT AVAILABLE FOR ANY MATERIAL OF THE COMPOSITE 
+          SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST PEMAG IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST SEQUT IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST TE IS NOT AVAILABLE FOR ANY MATERIAL OF THE COMPOSITE 
+          SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST TEEQ IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST TEVOL IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST EEQUT IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST MVF IS NOT AVAILABLE FOR ANY MATERIAL OF THE COMPOSITE 
+          SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST PE IS NOT AVAILABLE FOR ANY MATERIAL OF THE COMPOSITE 
+          SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST PEMAG IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST SEQUT IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST TE IS NOT AVAILABLE FOR ANY MATERIAL OF THE COMPOSITE 
+          SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST TEEQ IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST TEVOL IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST EEQUT IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST MVF IS NOT AVAILABLE FOR ANY MATERIAL OF THE COMPOSITE 
+          SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST PE IS NOT AVAILABLE FOR ANY MATERIAL OF THE COMPOSITE 
+          SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST PEMAG IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST SEQUT IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST TE IS NOT AVAILABLE FOR ANY MATERIAL OF THE COMPOSITE 
+          SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST TEEQ IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+
+ ***NOTE: OUTPUT REQUEST TEVOL IS NOT AVAILABLE FOR ANY MATERIAL OF THE 
+          COMPOSITE SECTION FOR ELEMENT TYPE S4R
+  *Step, name=nlan, nlgeom=YES, inc=300
+  *static, riks
+  *boundary
+  *cload
+  *cload
+  *cload
+  *cload
+  *cload
+  *cload
+  *cload
+  *cload
+  *cload
+  *cload
+  *endstep
+
+ ***WARNING: YOU HAVE ENTERED A ZERO OR NEGATIVE DENSITY VALUE. ABAQUS ALLOWS 
+             NON-PHYSICAL DATA; HOWEVER, MOST APPLICATIONS EXPECT A POSITIVE 
+             DENSITY VALUE AND GREATER THAN 1.00000E-36 .
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                 13530
+          NUMBER OF NODES IS                                    13592
+          NUMBER OF NODES DEFINED BY THE USER                   13582
+          NUMBER OF INTERNAL NODES GENERATED BY THE PROGRAM        10
+          TOTAL NUMBER OF VARIABLES IN THE MODEL                81552
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =   1.7000    
+       SYSTEM TIME (SEC)    =  0.40000    
+       TOTAL CPU TIME (SEC) =   2.1000    
+       WALLCLOCK TIME (SEC) =          8
+1
+
+   Abaqus 2021                                  Date 18-Jul-2022   Time 11:17:55
+   For use by UNIVERSITY OF BRISTOL under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    1  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       1     S T A T I C   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC LOAD CONTROL WITH -
+          A SUGGESTED INITIAL INCREMENT IN ARC LENGTH           1.000E-02
+          AND A TOTAL ARC LENGTH SCALE FACTOR OF                 1.00    
+          THE MINIMUM ARC LENGTH INCREMENT ALLOWED IS           1.000E-15
+          THE MAXIMUM ARC LENGTH INCREMENT ALLOWED IS           5.000E-02
+
+     LINEAR EQUATION SOLVER TYPE         DIRECT SPARSE
+
+     MODIFIED RIKS METHOD IS USED - AMPLITUDE REFERENCES ARE IGNORED
+
+     THE STEP ENDS WHEN LOAD PROPORTIONALITY FACTOR EXCEEDS    1.00    
+
+          LARGE DISPLACEMENT THEORY WILL BE USED
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          6.96E+09               46                399
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+
+
+          THE ANALYSIS HAS BEEN COMPLETED
+
+
+
+                              ANALYSIS COMPLETE
+                              WITH      5 WARNING MESSAGES ON THE DAT FILE
+                              AND     117 WARNING MESSAGES ON THE MSG FILE
+                                      117 WARNINGS ARE FOR NEGATIVE EIGENVALUES
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =   506.50    
+       SYSTEM TIME (SEC)    =   9.7000    
+       TOTAL CPU TIME (SEC) =   516.20    
+       WALLCLOCK TIME (SEC) =        810
