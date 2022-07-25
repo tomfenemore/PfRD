@@ -8,7 +8,7 @@ from odbAccess import *
 import numpy as np
 
 run = 'quarterbuckle'
-bukcle = 250
+buckle = 250
 openMdb(pathName="C:\Users\\tf17417\OneDrive - University of Bristol\RP4FE\FEA\Runkel half-2018.cae")
 p = mdb.models[run].rootAssembly
 
