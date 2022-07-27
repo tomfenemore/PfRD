@@ -11,7 +11,7 @@ if __name__ == '__main__':
     #print(df)
 
 
-    X = [250, 2]        #  This section of code runs the simple analytical calculation
+    X = [750, 2]        #  This section of code runs the simple analytical calculation
     dml, F, twist = d.beam(X)
     #print(twist[-1])
 
