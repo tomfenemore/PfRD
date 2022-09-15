@@ -6,6 +6,8 @@ import Clean as cl
 import twist
 
 run = 'threequarter'
+sec_no = 10
+sec_dist = 1000/sec_no
 #  Define the buckle location and extent
 tw_ini = np.zeros(1001)
 X = [750, 2, tw_ini]  # Location, Extent
@@ -30,9 +32,9 @@ while abs(t_d) > abs(X[2][1000] * 0.01):
     print('FE script has finished')
 
     # Now clean the data out of the FE file output
-    orig_tw = np.zeros(11)
-    for i in range(1, 11, 1):
-        orig_tw[i] = cl.clean(i*100, run)
+    orig_tw = np.zeros(sec_no+1)
+    for i in range(1, sec_no+1, 1):
+        orig_tw[i] = cl.clean(i*sec_dist, run)
     print(orig_tw)
     # Add twists from each section together to get a spanwise distribution
     t_diff = X[2] - twist.tw(orig_tw)
