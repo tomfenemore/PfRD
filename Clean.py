@@ -5,7 +5,7 @@ import math
 
 def clean(str, run):
 
-    half = pd.read_csv(f'{run}U_{str}.csv')
+    half = pd.read_csv('%s'%run+'U_%s.csv'%str)
     trim_hf = half
     trans = half[half['# LPF'].gt(0.5)].index[0]
     #print(trans, half['# LPF'].iloc[trans])
@@ -32,5 +32,5 @@ def clean(str, run):
     new_hf[' UR deg'] = deg
 
     #print(new_hf)
-    new_hf.to_excel(f'Clean-{str}{run}.xlsx')
+    new_hf.to_excel('Clean-%s'%str+'%s.xlsx'%run)
     return new_hf[' UR deg'].iloc[-1]

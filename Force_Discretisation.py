@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 def smear(F, sec_no):
-    sec_dist = 1000/sec_no
+    sec_dist = int(1000/sec_no)
     F_dist = F
     sections = range(sec_dist,1001,sec_dist)
     moms = np.zeros(len(F_dist))
