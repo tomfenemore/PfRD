@@ -15,6 +15,7 @@ class forces():
         self.buckle = self.buckles()
 
 
+
     def forces(self):
         f = np.zeros(1000)
         dL = np.zeros(1000)
@@ -40,6 +41,9 @@ class forces():
             else:
                 b[x] = 0
         return b
+
+
+
 
 
 

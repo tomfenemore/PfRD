@@ -4,12 +4,12 @@ from geneticalgorithm import geneticalgorithm as ga
 import Beam as d
 
 def run():
-    pic = 'GA_run_output_static'
+    pic = 'GA_35_500_fix.pkl'
     try:
         df = pd.read_pickle(f'{pic}')
     except:
         df = pd.DataFrame()
-    varbound = np.array([[100, 1000], [1.5, 3.5]])
+    varbound = np.array([[100, 950  k], [1.5, 3.5]])
     vartype = np.array([['int'], ['real']])
     algorithm_param = {'max_num_iteration': 100, \
                        'population_size': 30, \

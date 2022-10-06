@@ -3,11 +3,13 @@ import numpy as np
 import Forcing as f
 
 def beam(X):
-    steady_state = True
-    bkl_psn = X[0]
+    steady_state = False
+    bkl_psn = int(X[0])
     print('bkl_psn', bkl_psn)
     E_root = X[1]
     print('E_root', E_root)
+    bkl_fix = 500
+    E_root_fix = 3.5
     twist = np.zeros(1001)
     M = np.zeros(1002)
     twist_profile = []
@@ -19,7 +21,7 @@ def beam(X):
     tottw = 0
     t_diff = 0
     i = 1
-    f_ini = f.forces(twist_profile[0], bkl_psn, E_root)
+    f_ini = f.forces(twist_profile[0], bkl_fix, E_root_fix)
     if steady_state == True:
         while abs(t_d) > abs(twist_profile[i-1][1000] * 0.01):
             if i >= 1000:
@@ -59,8 +61,11 @@ def beam(X):
 
         for x in reversed(range(0, 1000)):
             buckle = f_start.buckle[x]
-            geom = g.geometry(x, 0.5, buckle, bkl_psn, E_root, str, f_start.moment[x])
+            thk = (f_ini.moment[bkl_psn] / (E_root *(34/0.5**2)))**(1/2)
+            geom = g.geometry(x, thk, buckle, bkl_psn, E_root, str, f_ini.moment[x])
             twist[x], M[x] = geom.twist_at_node(M[x + 1])
+
+        print(thk)
 
         for x in range(1, 1001):
             prof[0] = 0
@@ -78,7 +83,7 @@ def beam(X):
         #print('..............................')
         i = i + 1
 
-    f_end = f.forces(prof, bkl_psn, E_root)
+    f_end = f.forces(prof, bkl_fix, E_root_fix)
     l_profile = f_end.force
     m_profile = f_end.moment
 
@@ -95,4 +100,4 @@ def beam(X):
     print('tip twist:', prof[1000])
     print('dml', dml)
 
-    return dml, f_end.force, prof #, geom.shear_ctr_org(), f_start.forces(), d_M, d_M_norm
+    return dml #, f_end.force, prof #, geom.shear_ctr_org(), f_start.forces(), d_M, d_M_norm

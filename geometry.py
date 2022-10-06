@@ -8,7 +8,7 @@ class geometry():
     input at class initiation'''
     def __init__(self, x, buckle_thk, b, bkl_psn, E_root, str, M):
 
-        self.buckle_thk = buckle_thk  # buckle web thickness
+        self.buckle_thk = buckle_thk # buckle web thickness
         self.x = x  # span position
         self.span = 1000  # span length
         self.bkl_psn = bkl_psn
