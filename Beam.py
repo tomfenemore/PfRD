@@ -1,6 +1,7 @@
 import geometry as g
 import numpy as np
 import Forcing as f
+import buckle_distribution as b_d
 
 def beam(X):
     steady_state = False
@@ -8,6 +9,8 @@ def beam(X):
     print('bkl_psn', bkl_psn)
     E_root = X[1]
     print('E_root', E_root)
+    buckle_dist = b_d.smear(X[0], X[1],X[2],X[3],X[4])
+    print(buckle_dist)
     bkl_fix = 500
     E_root_fix = 3.5
     twist = np.zeros(1001)

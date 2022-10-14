@@ -9,7 +9,7 @@ def run():
         df = pd.read_pickle(f'{pic}')
     except:
         df = pd.DataFrame()
-    varbound = np.array([[100, 950  k], [1.5, 3.5]])
+    varbound = np.array([[100, 950], [1.5, 3.5]])
     vartype = np.array([['int'], ['real']])
     algorithm_param = {'max_num_iteration': 100, \
                        'population_size': 30, \
