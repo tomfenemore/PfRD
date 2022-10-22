@@ -1,6 +1,7 @@
 import geometry as g
 import numpy as np
 import Forcing as f
+import Forcing_distribution as FD
 import buckle_distribution as b_d
 
 def beam(X):
@@ -24,7 +25,7 @@ def beam(X):
     tottw = 0
     t_diff = 0
     i = 1
-    f_ini = f.forces(twist_profile[0], bkl_fix, E_root_fix)
+    f_ini = FD.forces(3)#f.forces(twist_profile[0], bkl_fix, E_root_fix)
     if steady_state == True:
         while abs(t_d) > abs(twist_profile[i-1][1000] * 0.01):
             if i >= 1000:
