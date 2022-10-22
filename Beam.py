@@ -6,11 +6,11 @@ import buckle_distribution as b_d
 def beam(X):
     steady_state = False
     bkl_psn = int(X[0])
-    print('bkl_psn', bkl_psn)
+    #print('bkl_psn', bkl_psn)
     E_root = X[1]
-    print('E_root', E_root)
-    buckle_dist = b_d.smear(X[0], X[1],X[2],X[3],X[4])
-    print(buckle_dist)
+    #print('E_root', E_root)
+    buckle_dist = b_d.smear(X)
+    #print(buckle_dist)
     bkl_fix = 500
     E_root_fix = 3.5
     twist = np.zeros(1001)
@@ -49,7 +49,7 @@ def beam(X):
             #twist_profile.append(prof)
             t_diff = twist_profile[i] - prof
             t_d = t_diff[1000]
-            print(i)
+            #print(i)
 
             #print('thresh', twist_profile[i-1][999] * 0.01)
             #print('tip twist difference', t_diff)
@@ -63,12 +63,12 @@ def beam(X):
         f_start = f.forces(twist_profile[i], bkl_psn, E_root)
 
         for x in reversed(range(0, 1000)):
-            buckle = f_start.buckle[x]
-            thk = (f_ini.moment[bkl_psn] / (E_root *(34/0.5**2)))**(1/2)
+            buckle = buckle_dist[x]
+            thk = (f_ini.moment[x] / (E_root *(34/0.5**2)))**(1/2)
             geom = g.geometry(x, thk, buckle, bkl_psn, E_root, str, f_ini.moment[x])
             twist[x], M[x] = geom.twist_at_node(M[x + 1])
 
-        print(thk)
+        #print(thk)
 
         for x in range(1, 1001):
             prof[0] = 0

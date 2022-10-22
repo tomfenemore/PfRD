@@ -6,13 +6,13 @@ import Force_Discretisation_Mom_Tot as FD
 import Clean as cl
 
 if __name__ == '__main__':
-    #GA.run()  #  This section of code runs the Genetic Algorithm
-    #df = pd.read_pickle('GA_run_output_static')
-    #print(df)
+    GA.run()  #  This section of code runs the Genetic Algorithm
+    df = pd.read_pickle('Var_Buckle')
+    print(df)
 
 
-    X = [2,2,2,2,2]        #  This section of code runs the simple analytical calculation
-    dml, F, twist = d.beam(X)
+    #X = [1,2,3,4,5]        #  This section of code runs the simple analytical calculation
+    #dml= d.beam(X)
     #print(twist[-1])
 
     #moms = FD.smear(F)
