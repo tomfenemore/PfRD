@@ -4,7 +4,7 @@ from geneticalgorithm import geneticalgorithm as ga
 import Beam as d
 
 def run():
-    pic = 'Var_Buckle'
+    pic = 'Var_Buckle_sin_3'
     try:
         df = pd.read_pickle(f'{pic}')
     except:

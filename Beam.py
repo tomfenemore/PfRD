@@ -25,7 +25,8 @@ def beam(X):
     tottw = 0
     t_diff = 0
     i = 1
-    f_ini = FD.forces(3)#f.forces(twist_profile[0], bkl_fix, E_root_fix)
+    f_av = 3
+    f_ini = FD.forces(f_av, prof)#f.forces(twist_profile[0], bkl_fix, E_root_fix)
     if steady_state == True:
         while abs(t_d) > abs(twist_profile[i-1][1000] * 0.01):
             if i >= 1000:
@@ -87,7 +88,7 @@ def beam(X):
         #print('..............................')
         i = i + 1
 
-    f_end = f.forces(prof, bkl_fix, E_root_fix)
+    f_end = FD.forces(f_av, prof)
     l_profile = f_end.force
     m_profile = f_end.moment
 
