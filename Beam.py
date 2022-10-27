@@ -28,7 +28,7 @@ def beam(X):
     i = 1
     f_av = 3
     f_ini = FD.forces(f_av, prof)#f.forces(twist_profile[0], bkl_fix, E_root_fix)  #This is the intialisation of the force. This function can be changed fo be used for different force distributions
-    if steady_state == True:
+    if steady_state == True:#loop for the steady state convergence method (aero-structural coupled)
         while abs(t_d) > abs(twist_profile[i-1][1000] * 0.01):
             if i >= 1000:
                 prof = np.zeros(1001)
@@ -61,7 +61,7 @@ def beam(X):
             #print('..............................')
             i = i + 1
 
-    else:
+    else:#  Loop for a structural only calculation to the applied force
         twist_profile.append((twist_profile[i - 1] - (t_diff * 0.03)))
         f_start = f.forces(twist_profile[i], bkl_psn, E_root)
 
@@ -93,6 +93,7 @@ def beam(X):
     l_profile = f_end.force
     m_profile = f_end.moment
 
+#  Determination of forces after looping and translation into the objective function
 
     d_L = l_profile.sum() - f_ini.force.sum()
     d_M = m_profile[0] - f_ini.moment[0]
