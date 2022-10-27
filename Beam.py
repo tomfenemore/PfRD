@@ -5,12 +5,13 @@ import Forcing_distribution as FD
 import buckle_distribution as b_d
 
 def beam(X):
+    # Initialisation of variables needed for code
     steady_state = False
     bkl_psn = int(X[0])
     #print('bkl_psn', bkl_psn)
     E_root = X[1]
     #print('E_root', E_root)
-    buckle_dist = b_d.smear(X)
+    buckle_dist = b_d.smear(X)  #this creates an array of the buckle extent that is input into tyhe geometry class
     #print(buckle_dist)
     bkl_fix = 500
     E_root_fix = 3.5
@@ -26,7 +27,7 @@ def beam(X):
     t_diff = 0
     i = 1
     f_av = 3
-    f_ini = FD.forces(f_av, prof)#f.forces(twist_profile[0], bkl_fix, E_root_fix)
+    f_ini = FD.forces(f_av, prof)#f.forces(twist_profile[0], bkl_fix, E_root_fix)  #This is the intialisation of the force. This function can be changed fo be used for different force distributions
     if steady_state == True:
         while abs(t_d) > abs(twist_profile[i-1][1000] * 0.01):
             if i >= 1000:
