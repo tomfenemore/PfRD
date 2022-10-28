@@ -6,13 +6,13 @@ executeOnCaeStartup()
 from odbAccess import *
 import numpy as np
 
-model = 'halfbuckle-20'
-job = 'half-20'
+model = 'halfbuckle-20'  # Model in abaqus
+job = 'half-20'  # Job in abaqus
 
 F = np.loadtxt("C:\Users\\tf17417\OneDrive - University of Bristol\RP4FE\PfRD\F.csv")
 openMdb(pathName="C:\Users\\tf17417\OneDrive - University of Bristol\RP4FE\FEA\Runkel half-2018.cae")  # open abaqus project
 for i in range(len(F)):
-    string = 'L-%s0'%((i+1)*5)
+    string = 'L-%s0'%((i+1)*(1000/len(F)))
     mdb.models[model].loads[string].setValues(cf2=F[i])
 
 #  Create and Run the Job
@@ -21,6 +21,8 @@ mdb.jobs[job].waitForCompletion()
 
 #  Get the required displacement data from the job
 f = session.openOdb(name='%s.odb'%job)
+
+#  Find the history region relating to each force application point. When adding load appication sections, the new sections must be added here.
 u1000 = np.array(f.steps['nlan'].historyRegions['Node PART-1-1.13573'].historyOutputs['UR3'].data)
 u950 = np.array(f.steps['nlan'].historyRegions['Node ASSEMBLY.20'].historyOutputs['UR3'].data)
 u900 = np.array(f.steps['nlan'].historyRegions['Node ASSEMBLY.9'].historyOutputs['UR3'].data)
@@ -42,7 +44,7 @@ u150 = np.array(f.steps['nlan'].historyRegions['Node ASSEMBLY.12'].historyOutput
 u100 = np.array(f.steps['nlan'].historyRegions['Node ASSEMBLY.5'].historyOutputs['UR3'].data)
 u50 = np.array(f.steps['nlan'].historyRegions['Node ASSEMBLY.11'].historyOutputs['UR3'].data)
 
-#  save the data to a csv
+#  save the data to a csv. Again, these should be added when adding sections and should use fhe same naming convention i.e. model name_number of sections_spanwise location.csv
 np.savetxt('C:\Users\\tf17417\OneDrive - University of Bristol\RP4FE\PfRD\half_20U_1000.csv', u1000, delimiter=',', header='LPF, UR')
 np.savetxt('C:\Users\\tf17417\OneDrive - University of Bristol\RP4FE\PfRD\half_20U_950.csv', u950, delimiter=',', header='LPF, UR')
 np.savetxt('C:\Users\\tf17417\OneDrive - University of Bristol\RP4FE\PfRD\half_20U_900.csv', u900, delimiter=',', header='LPF, UR')

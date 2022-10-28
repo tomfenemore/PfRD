@@ -5,18 +5,16 @@ import subprocess
 import Clean as cl
 import twist
 
-run = 'half_20'
-sec_no = 20
+run = 'half_20'  # Run string determines which FEScript file to run in abaqus. The FEScript file is a file that relates to a given abaqus model. For a new model a new FEScript file should be copied and edited from an existing file. FEScript_half_20.py is best annotated.
+sec_no = 20  # Number of load sections used
 sec_dist = 1000/sec_no
 #  Define the buckle location and extent
 tw_ini = np.zeros(1001)
-X = [500, 2, tw_ini]  # Location, Extent
+X = [500, 2, tw_ini]  # Buckle Location, Buckle Extent
 t_diff = np.zeros(1001)
 t_d = 1000
 
-#run the section script for this specific section:
-sp = subprocess.run('abaqus cae noGUI="FEScript_%s.py"'%run, shell=True,capture_output=True)
-print(sp)
+
 
 # This section of code runs the simple analytical calculation
 while abs(t_d) > abs(X[2][1000] * 0.01):
