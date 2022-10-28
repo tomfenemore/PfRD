@@ -10,7 +10,7 @@ def beam(X):
     print('E_root', E_root)
     twist = np.zeros(1001)
     M = np.zeros(1002)
-    twist_profile = X[2]
+    twist_profile = np.zeros(1001)
     t_diff = np.zeros(1001)
     prof = np.zeros(1001)
     str = 'tip'

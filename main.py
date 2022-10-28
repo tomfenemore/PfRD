@@ -14,12 +14,9 @@ if __name__ == '__main__':
     X = [500, 2]        #  This section of code runs the simple analytical calculation
     dml, F, twist = d.beam(X)
     #print(twist[-1])
+    print(twist[100],twist[200],twist[300],twist[400],twist[500],twist[600],twist[700],twist[800],twist[900],twist[1000])
 
-    moms = FD.smear(F)
-    print(moms)
-    #print(twist[100],twist[200],twist[300],twist[400],twist[500],twist[600],twist[700],twist[800],twist[900],twist[1000])
 
-    cl.clean('500-2-Moment')
 
 
 
